@@ -93,12 +93,12 @@ SistenFrota/
 
 #### Configuração Inicial
 - ✅ Criar estrutura básica do projeto
-- 🔲 Configurar ambiente de desenvolvimento
-- 🔲 Configurar Docker e docker-compose
-- 🔲 Configurar ESLint e Prettier
+- ✅ Configurar ambiente de desenvolvimento
+- ✅ Configurar Docker e docker-compose
+- ✅ Configurar ESLint e Prettier
 - 🔲 Configurar banco de dados e migrations
-- 🔲 Configurar estrutura de microserviços
-- 🔲 Criar documentação inicial (README)
+- ✅ Configurar estrutura de microserviços
+- ✅ Criar documentação inicial (README)
 - 🔲 Implementar autenticação e autorização
   - 🔲 Configurar JWT e bcrypt
   - 🔲 Implementar registro de usuários
@@ -109,8 +109,8 @@ SistenFrota/
 - 🔲 Configurar CI/CD pipeline
 
 #### Backend (API)
-- 🔲 Desenvolver microserviços base
-  - 🔲 Estrutura de diretórios
+- ✅ Desenvolver microserviços base
+  - ✅ Estrutura de diretórios
   - 🔲 Configuração do banco de dados
   - 🔲 Migrations das tabelas principais
   - 🔲 API Gateway
@@ -171,7 +171,7 @@ SistenFrota/
   - 🔲 Navbar
   - 🔲 Sidebar
   - 🔲 Cards
-  - 🔲 Bot��es
+  - 🔲 Botões
   - 🔲 Formulários
 - 🔲 Implementar páginas
   - 🔲 Login e Registro
