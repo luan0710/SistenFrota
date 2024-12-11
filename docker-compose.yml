@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  # Serviço de Banco de Dados
+  db:
+    image: mysql:8.0
+    container_name: sistenfrota_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
+      MYSQL_DATABASE: ${DB_NAME}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  # Serviço de Autenticação
+  auth:
+    build: 
+      context: ./services/auth
+      dockerfile: Dockerfile
+    container_name: sistenfrota_auth
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DB_HOST=db
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=${DB_NAME}
+      - JWT_SECRET=${JWT_SECRET}
+    ports:
+      - "${AUTH_SERVICE_PORT}:${AUTH_SERVICE_PORT}"
+
+  # Serviço de Veículos
+  vehicles:
+    build:
+      context: ./services/vehicles
+      dockerfile: Dockerfile
+    container_name: sistenfrota_vehicles
+    restart: always
+    depends_on:
+      - db
+      - auth
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DB_HOST=db
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=${DB_NAME}
+    ports:
+      - "${VEHICLES_SERVICE_PORT}:${VEHICLES_SERVICE_PORT}"
+
+  # Serviço de Manutenção
+  maintenance:
+    build:
+      context: ./services/maintenance
+      dockerfile: Dockerfile
+    container_name: sistenfrota_maintenance
+    restart: always
+    depends_on:
+      - db
+      - auth
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DB_HOST=db
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=${DB_NAME}
+    ports:
+      - "${MAINTENANCE_SERVICE_PORT}:${MAINTENANCE_SERVICE_PORT}"
+
+volumes:
+  mysql_data: 
