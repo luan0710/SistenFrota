@@ -1,0 +1,476 @@
+{
+  "info": {
+    "name": "SistenFrota API",
+    "description": "Coleção de endpoints da API do Sistema de Gestão de Frota",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Autenticação",
+      "item": [
+        {
+          "name": "Registro de Usuário",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3001/auth/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["auth", "register"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Usuário Teste\",\n\t\"email\": \"usuario@teste.com\",\n\t\"password\": \"senha123\",\n\t\"role\": \"user\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3001/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["auth", "login"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"usuario@teste.com\",\n\t\"password\": \"senha123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Recuperar Senha",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3001/auth/forgot-password",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["auth", "forgot-password"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"email\": \"usuario@teste.com\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Redefinir Senha",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3001/auth/reset-password",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["auth", "reset-password"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"token\": \"token_recebido_por_email\",\n\t\"password\": \"nova_senha123\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Perfil do Usuário",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3001/auth/me",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["auth", "me"]
+            }
+          }
+        },
+        {
+          "name": "Listar Usuários (Admin)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3001/auth/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3001",
+              "path": ["auth", "users"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Veículos",
+      "item": [
+        {
+          "name": "Listar Veículos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3002/vehicles",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["vehicles"]
+            }
+          }
+        },
+        {
+          "name": "Obter Veículo por ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3002/vehicles/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["vehicles", "1"]
+            }
+          }
+        },
+        {
+          "name": "Criar Veículo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3002/vehicles",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["vehicles"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"plate\": \"ABC1234\",\n\t\"model\": \"Fiat Uno\",\n\t\"year\": 2020,\n\t\"status\": \"available\",\n\t\"mileage\": 0\n}"
+            }
+          }
+        },
+        {
+          "name": "Atualizar Veículo",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3002/vehicles/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["vehicles", "1"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"plate\": \"ABC1234\",\n\t\"model\": \"Fiat Uno\",\n\t\"year\": 2020,\n\t\"status\": \"available\",\n\t\"mileage\": 1000\n}"
+            }
+          }
+        },
+        {
+          "name": "Excluir Veículo",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3002/vehicles/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["vehicles", "1"]
+            }
+          }
+        },
+        {
+          "name": "Atualizar Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3002/vehicles/1/status",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["vehicles", "1", "status"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"status\": \"maintenance\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Atualizar Quilometragem",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3002/vehicles/1/mileage",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3002",
+              "path": ["vehicles", "1", "mileage"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"mileage\": 1500\n}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Manutenções",
+      "item": [
+        {
+          "name": "Listar Manutenções",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3003/maintenance",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["maintenance"]
+            }
+          }
+        },
+        {
+          "name": "Obter Manutenção por ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3003/maintenance/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["maintenance", "1"]
+            }
+          }
+        },
+        {
+          "name": "Listar Manutenções por Veículo",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3003/maintenance/vehicle/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["maintenance", "vehicle", "1"]
+            }
+          }
+        },
+        {
+          "name": "Criar Manutenção",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3003/maintenance",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["maintenance"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"vehicle_id\": 1,\n\t\"type\": \"preventive\",\n\t\"description\": \"Troca de óleo\",\n\t\"scheduled_date\": \"2024-03-20\",\n\t\"status\": \"scheduled\",\n\t\"estimated_cost\": 150.00\n}"
+            }
+          }
+        },
+        {
+          "name": "Atualizar Manutenção",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3003/maintenance/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["maintenance", "1"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"type\": \"preventive\",\n\t\"description\": \"Troca de óleo e filtros\",\n\t\"scheduled_date\": \"2024-03-20\",\n\t\"status\": \"scheduled\",\n\t\"estimated_cost\": 200.00\n}"
+            }
+          }
+        },
+        {
+          "name": "Excluir Manutenção",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3003/maintenance/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["maintenance", "1"]
+            }
+          }
+        },
+        {
+          "name": "Atualizar Status da Manutenção",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3003/maintenance/1/status",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3003",
+              "path": ["maintenance", "1", "status"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"status\": \"completed\"\n}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+} 
