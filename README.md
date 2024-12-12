@@ -96,64 +96,43 @@ SistenFrota/
 - ✅ Configurar ambiente de desenvolvimento
 - ✅ Configurar Docker e docker-compose
 - ✅ Configurar ESLint e Prettier
-- 🔲 Configurar banco de dados e migrations
+- ✅ Configurar banco de dados e migrations
+  - ✅ Configurar Sequelize
+  - ✅ Criar migrations para usuários
+  - ✅ Criar migrations para veículos
+  - ✅ Criar migrations para manutenções
 - ✅ Configurar estrutura de microserviços
 - ✅ Criar documentação inicial (README)
-- 🔲 Implementar autenticação e autorização
-  - 🔲 Configurar JWT e bcrypt
-  - 🔲 Implementar registro de usuários
-  - 🔲 Implementar login
-  - 🔲 Implementar recuperação de senha
-  - 🔲 Implementar validações
-  - 🔲 Implementar autorização baseada em papéis (RBAC)
+- ✅ Implementar autenticação e autorização
+  - ✅ Configurar JWT e bcrypt
+  - ✅ Implementar registro de usuários
+  - ✅ Implementar login
+  - ✅ Implementar recuperação de senha
+  - ✅ Implementar validações
+  - ✅ Implementar autorização baseada em papéis (RBAC)
 - 🔲 Configurar CI/CD pipeline
 
 #### Backend (API)
-- ✅ Desenvolver microserviços base
-  - ✅ Estrutura de diretórios
-  - 🔲 Configuração do banco de dados
-  - 🔲 Migrations das tabelas principais
-  - 🔲 API Gateway
-  - 🔲 Service Discovery
-  - 🔲 Load Balancer
-- 🔲 Implementar endpoints da API
-  - 🔲 Autenticação de Usuários
-  - 🔲 Gestão de Usuários
-    - 🔲 Listagem com filtros
-    - 🔲 Formulário de cadastro/edição
-    - 🔲 Exclusão com confirmação
-    - 🔲 Status e indicadores visuais
-    - 🔲 Validações de formulário
-  - 🔲 Gestão de Veículos
-    - 🔲 Listagem com filtros
-    - 🔲 Formulário de cadastro/edição
-    - 🔲 Exclusão com confirmação
-    - 🔲 Status e indicadores visuais
-    - 🔲 Número identificador do veículo
-    - 🔲 Categorização por tipo de veículo
-    - 🔲 Busca por múltiplos campos
-    - 🔲 Validações de formulário
-  - 🔲 Manutenções
-    - 🔲 CRUD completo
-    - 🔲 Agendamento
-    - 🔲 Histórico
-    - 🔲 Custos
+- ⏳ Implementar endpoints da API
+  - ✅ Autenticação de Usuários
+  - ✅ Gestão de Veículos
+    - ✅ Listagem com filtros
+    - ✅ Formulário de cadastro/edição
+    - ✅ Exclusão com confirmação
+    - ✅ Status e indicadores visuais
+    - ✅ Número identificador do veículo
+    - ✅ Categorização por tipo de veículo
+    - ✅ Busca por múltiplos campos
+    - ✅ Validações de formulário
+  - ✅ Manutenções
+    - ✅ CRUD completo
+    - ✅ Agendamento
+    - ✅ Histórico
+    - ✅ Custos
   - 🔲 Abastecimentos
     - 🔲 CRUD completo
     - 🔲 Controle de custos
     - 🔲 Histórico
-  - 🔲 Viagens
-    - 🔲 CRUD completo
-    - 🔲 Agendamento
-    - 🔲 Controle de quilometragem
-  - 🔲 Documentos
-    - 🔲 CRUD completo
-    - 🔲 Upload de arquivos
-    - 🔲 Controle de vencimentos
-  - 🔲 Relatórios
-    - 🔲 Relatórios em PDF
-    - 🔲 Filtros por período
-    - 🔲 Diferentes tipos de relatório
 - 🔲 Implementar validações e middlewares
   - 🔲 Validação de dados com Joi
   - 🔲 Middleware de tratamento de erros
@@ -413,7 +392,7 @@ Este projeto está sob a licença [MIT](LICENSE).
 
 3. **Performance**
    - Cache implementado para relatórios comuns
-   - Paginação forçada em listagens grandes
+   - Pagina��ão forçada em listagens grandes
 
 ### Próximas Correções Prioritárias
 1. Otimização do API Gateway
