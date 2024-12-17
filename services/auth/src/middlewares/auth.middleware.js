@@ -1,6 +1,9 @@
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
 
+// Blacklist de tokens
+const tokenBlacklist = new Set();
+
 const authMiddleware = async (req, res, next) => {
   try {
     // Verifica se o token foi enviado no header
@@ -13,6 +16,11 @@ const authMiddleware = async (req, res, next) => {
     const [scheme, token] = authHeader.split(' ');
     if (!/^Bearer$/i.test(scheme)) {
       return res.status(401).json({ error: 'Token mal formatado' });
+    }
+
+    // Verifica se o token está na blacklist
+    if (tokenBlacklist.has(token)) {
+      return res.status(401).json({ error: 'Token invalidado' });
     }
 
     try {
@@ -34,11 +42,17 @@ const authMiddleware = async (req, res, next) => {
       
       return next();
     } catch (err) {
-      return res.status(401).json({ error: 'Token inválido' });
+      if (err.name === 'TokenExpiredError') {
+        return res.status(401).json({ error: 'Token expirado' });
+      }
+      if (err.name === 'JsonWebTokenError') {
+        return res.status(401).json({ error: 'Token inválido' });
+      }
+      return res.status(401).json({ error: 'Erro na validação do token' });
     }
   } catch (error) {
     return res.status(500).json({ error: 'Erro interno do servidor' });
   }
 };
 
-module.exports = authMiddleware; 
+module.exports = { authMiddleware, tokenBlacklist }; 
