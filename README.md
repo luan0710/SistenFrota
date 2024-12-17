@@ -94,7 +94,9 @@ SistenFrota/
 #### Configuração Inicial
 - ✅ Criar estrutura básica do projeto
 - ✅ Configurar ambiente de desenvolvimento
-- ✅ Configurar Docker e docker-compose
+- ⏳ Configurar Docker e docker-compose
+  - ✅ Arquivos de configuração criados
+  - 🔲 Testar e validar em produção
 - ✅ Configurar ESLint e Prettier
 - ✅ Configurar banco de dados e migrations
   - ✅ Configurar Sequelize
@@ -102,127 +104,67 @@ SistenFrota/
   - ✅ Criar migrations para veículos
   - ✅ Criar migrations para manutenções
 - ✅ Configurar estrutura de microserviços
-- ✅ Criar documentação inicial (README)
-- ✅ Implementar autenticação e autorização
+- ⏳ Criar documentação inicial (README)
+  - ✅ Estrutura básica
+  - 🔲 Documentação técnica detalhada
+- ⏳ Implementar autenticação e autorização
   - ✅ Configurar JWT e bcrypt
   - ✅ Implementar registro de usuários
   - ✅ Implementar login
-  - ✅ Implementar recuperação de senha
-  - ✅ Implementar validações
+  - ✅ Implementar recuperação de senha básica
+  - ⏳ Implementar recuperação de senha com email
   - ✅ Implementar autorização baseada em papéis (RBAC)
 - 🔲 Configurar CI/CD pipeline
 
 #### Backend (API)
 - ⏳ Implementar endpoints da API
   - ✅ Autenticação de Usuários
-  - ✅ Gestão de Veículos
-    - ✅ Listagem com filtros
-    - ✅ Formulário de cadastro/edição
-    - ✅ Exclusão com confirmação
-    - ✅ Status e indicadores visuais
-    - ✅ Número identificador do veículo
-    - ✅ Categorização por tipo de veículo
-    - ✅ Busca por múltiplos campos
-    - ✅ Validações de formulário
-  - ✅ Manutenções
-    - ✅ CRUD completo
-    - ✅ Agendamento
-    - ✅ Histórico
-    - ✅ Custos
+  - ✅ Gestão de Veículos (CRUD básico)
+  - ✅ Manutenções (CRUD básico)
   - 🔲 Abastecimentos
-    - 🔲 CRUD completo
-    - 🔲 Controle de custos
-    - 🔲 Histórico
-- 🔲 Implementar validações e middlewares
+- 🔲 Implementar validações avançadas
   - 🔲 Validação de dados com Joi
-  - 🔲 Middleware de tratamento de erros
-  - 🔲 Middleware de autenticação
-  - 🔲 Middleware de autorização
+  - ⏳ Middleware de tratamento de erros
   - 🔲 Rate limiting
 - 🔲 Configurar logs e monitoramento
 - 🔲 Documentar API (Swagger/OpenAPI)
 
 #### Frontend (React)
-- 🔲 Configurar projeto React com TailwindCSS
-- 🔲 Implementar layout responsivo
-- 🔲 Desenvolver componentes base
-  - 🔲 Layout base
-  - 🔲 Navbar
-  - 🔲 Sidebar
-  - 🔲 Cards
-  - 🔲 Botões
-  - 🔲 Formulários
-- 🔲 Implementar páginas
-  - 🔲 Login e Registro
-    - 🔲 Validação de campos
-    - 🔲 Feedback visual de erros
-    - 🔲 Mensagens de sucesso
-    - 🔲 Link de recuperação de senha
-  - 🔲 Recuperação de Senha
-    - 🔲 Formulário de recuperação
-    - 🔲 Validação de email
-    - 🔲 Feedback visual
-    - 🔲 Redirecionamento
-  - 🔲 Dashboard
-    - 🔲 Cards de estatísticas
-    - 🔲 Atividades recentes
-    - 🔲 Filtros de período
-    - 🔲 Indicadores de tendência
-  - 🔲 Gestão de Usuários
-    - 🔲 Listagem com filtros
-    - 🔲 Formulário de cadastro/edição
-    - 🔲 Exclusão com confirmação
-    - 🔲 Status e indicadores visuais
-  - 🔲 Gestão de Veículos
-    - 🔲 Listagem com filtros
-    - 🔲 Formulário de cadastro/edição
-    - 🔲 Exclusão com confirmação
-    - 🔲 Status e indicadores visuais
-    - 🔲 Número identificador do veículo
-    - 🔲 Categorização por tipo de veículo
-    - 🔲 Busca por múltiplos campos
-    - 🔲 Validações de formulário
-  - 🔲 Manutenções
-    - 🔲 CRUD completo
-    - 🔲 Agendamento
-    - 🔲 Histórico
-  - 🔲 Abastecimentos
-    - 🔲 CRUD completo
-    - 🔲 Controle de custos
-  - 🔲 Viagens
-    - 🔲 CRUD completo
-    - 🔲 Agendamento
-  - 🔲 Documentos
-    - 🔲 CRUD completo
-    - 🔲 Upload/Download
-  - 🔲 Relatórios
-    - 🔲 Geração de relatórios
-    - 🔲 Filtros
-    - 🔲 Download em PDF
-- 🔲 Integrar com API
-- 🔲 Implementar testes
+- 🔲 Todo o desenvolvimento frontend ainda não foi iniciado
 
 #### Mobile (React Native)
-- 🔲 Configurar projeto React Native
-- 🔲 Desenvolver UI/UX mobile
-- 🔲 Implementar funcionalidades principais
-- 🔲 Integrar com API
-- 🔲 Testes e publicação
+- 🔲 Todo o desenvolvimento mobile ainda não foi iniciado
 
 #### Qualidade e Segurança
 - 🔲 Implementar testes automatizados
-  - 🔲 Testes unitários
-  - 🔲 Testes de integração
-  - 🔲 Testes E2E
 - 🔲 Realizar análise de segurança
 - 🔲 Implementar monitoramento
 - 🔲 Configurar backup e recuperação
 
 #### Documentação
-- 🔲 Documentação técnica
+- ⏳ Documentação técnica
 - 🔲 Manual do usuário
 - 🔲 Documentação da API
 - 🔲 Guias de desenvolvimento
+
+#### Autenticação e Segurança
+- 🔲 Implementar proteções adicionais
+  - 🔲 Rate limiting para tentativas de login
+  - 🔲 Bloqueio temporário após 3 tentativas falhas
+  - 🔲 Política de senha forte
+  - 🔲 Autenticação em duas etapas (2FA)
+  
+- 🔲 Melhorias no processo de login
+  - 🔲 Implementar remember me
+  - 🔲 Gerenciamento de sessões ativas
+  - 🔲 Logout em todos dispositivos
+  - 🔲 Histórico de logins
+
+- ⏳ Sistema de recuperação de senha
+  - ✅ Recuperação básica
+  - 🔲 Templates de email
+  - 🔲 Tokens temporários
+  - 🔲 Validação de links expirados
 
 ### Como Contribuir
 
@@ -392,10 +334,30 @@ Este projeto está sob a licença [MIT](LICENSE).
 
 3. **Performance**
    - Cache implementado para relatórios comuns
-   - Pagina��ão forçada em listagens grandes
+   - Paginação forçada em listagens grandes
 
 ### Próximas Correções Prioritárias
 1. Otimização do API Gateway
 2. Refatoração do sistema de uploads
 3. Implementação de testes automatizados
 4. Melhoria na geração de relatórios
+
+#### Testes de Autenticação
+- [ ] Login
+  - [ ] Validar credenciais corretas
+  - [ ] Testar credenciais inválidas
+  - [ ] Verificar bloqueio após tentativas falhas
+  - [ ] Testar expiração de token
+  - [ ] Validar refresh token
+  
+- [ ] Recuperação de Senha
+  - [ ] Envio de email
+  - [ ] Validação de token
+  - [ ] Expiração de link
+  - [ ] Alteração efetiva da senha
+
+#### Autenticação
+- [ ] Tokens JWT não invalidados após logout
+- [ ] Ausência de proteção contra força bruta
+- [ ] Falta de auditoria detalhada de tentativas de login
+- [ ] Recuperação de senha via email não implementada
