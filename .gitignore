@@ -39,6 +39,9 @@ pids/
 # Database
 *.sqlite
 *.sqlite3
+test-db.js
+**/config/database.local.js
+**/config/db.config.js
 
 # Testing
 coverage/
