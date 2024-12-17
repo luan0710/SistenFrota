@@ -85,9 +85,9 @@ SistenFrota/
 
 ### Status das Tarefas
 
-- 🔲 Não iniciado
-- ⏳ Em andamento
 - ✅ Concluído
+- ⏳ Em andamento
+- 🔲 Não iniciado
 
 ### Tarefas do Projeto
 
@@ -101,70 +101,109 @@ SistenFrota/
 - ✅ Configurar banco de dados e migrations
   - ✅ Configurar Sequelize
   - ✅ Criar migrations para usuários
-  - ✅ Criar migrations para veículos
-  - ✅ Criar migrations para manutenções
+  - ✅ Criar migrations para histórico de login
+  - 🔲 Criar migrations para veículos
+  - 🔲 Criar migrations para manutenções
 - ✅ Configurar estrutura de microserviços
 - ⏳ Criar documentação inicial (README)
   - ✅ Estrutura básica
   - 🔲 Documentação técnica detalhada
-- ⏳ Implementar autenticação e autorização
+- ✅ Implementar autenticação e autorização
   - ✅ Configurar JWT e bcrypt
   - ✅ Implementar registro de usuários
   - ✅ Implementar login
   - ✅ Implementar recuperação de senha básica
-  - ⏳ Implementar recuperação de senha com email
+  - ✅ Implementar recuperação de senha com email
   - ✅ Implementar autorização baseada em papéis (RBAC)
+  - ✅ Implementar histórico de login
+  - ✅ Implementar detecção de dispositivo/localização
+  - ✅ Implementar notificações de novo login
 - 🔲 Configurar CI/CD pipeline
 
 #### Backend (API)
 - ⏳ Implementar endpoints da API
   - ✅ Autenticação de Usuários
-  - ✅ Gestão de Veículos (CRUD básico)
-  - ✅ Manutenções (CRUD básico)
+  - 🔲 Gestão de Veículos (CRUD básico)
+  - 🔲 Manutenções (CRUD básico)
   - 🔲 Abastecimentos
-- 🔲 Implementar validações avançadas
-  - 🔲 Validação de dados com Joi
-  - ⏳ Middleware de tratamento de erros
-  - 🔲 Rate limiting
-- 🔲 Configurar logs e monitoramento
+- ⏳ Implementar validações avançadas
+  - ✅ Validação de dados com Sequelize
+  - ✅ Middleware de tratamento de erros
+  - ✅ Rate limiting
+  - ✅ Proteção contra força bruta
+  - ✅ Bloqueio de conta após tentativas falhas
+- ✅ Configurar logs e monitoramento
+  - ✅ Logs estruturados com Winston
+  - ✅ Logs de auditoria para login
+  - ✅ Logs de erros separados
 - 🔲 Documentar API (Swagger/OpenAPI)
 
 #### Frontend (React)
-- 🔲 Todo o desenvolvimento frontend ainda não foi iniciado
+- ⏳ Desenvolvimento da interface
+  - ✅ Layout base com Tailwind CSS
+  - ✅ Sistema de autenticação
+  - ✅ Recuperação de senha
+  - ✅ Dashboard inicial
+  - ✅ Menu de navegação
+  - ✅ Estrutura de rotas
+  - ✅ Proteção de rotas
+  - ⏳ Páginas de cadastro
+    - 🔲 CRUD de Veículos
+    - 🔲 CRUD de Motoristas
+    - 🔲 CRUD de Fornecedores
+  - 🔲 Páginas de operações
+  - 🔲 Páginas de manutenção
+  - 🔲 Páginas de relatórios
+  - 🔲 Páginas de documentos
+  - 🔲 Página de configurações
 
 #### Mobile (React Native)
 - 🔲 Todo o desenvolvimento mobile ainda não foi iniciado
 
 #### Qualidade e Segurança
-- 🔲 Implementar testes automatizados
-- 🔲 Realizar análise de segurança
-- 🔲 Implementar monitoramento
-- 🔲 Configurar backup e recuperação
+- ⏳ Implementar testes automatizados
+  - ✅ Testes unitários do backend
+  - ✅ Testes de integração do backend
+  - 🔲 Testes E2E
+  - 🔲 Testes do frontend
+- ✅ Realizar análise de segurança
+  - ✅ Implementar CORS
+  - ✅ Implementar Helmet
+  - ✅ Proteção contra XSS
+  - ✅ Rate Limiting
+  - ✅ Sanitização de dados
+- ✅ Implementar monitoramento
+  - ✅ Logs centralizados
+  - ✅ Histórico de ações
+  - ✅ Detecção de anomalias
+- ✅ Configurar backup e recuperação
+  - ✅ Migrations e rollbacks
+  - ✅ Scripts de backup
 
 #### Documentação
 - ⏳ Documentação técnica
+  - ✅ README principal
+  - ✅ Instruções de instalação
+  - ✅ Estrutura do projeto
+  - 🔲 Arquitetura detalhada
 - 🔲 Manual do usuário
 - 🔲 Documentação da API
-- 🔲 Guias de desenvolvimento
+- ⏳ Guias de desenvolvimento
+  - ✅ Padrões de código
+  - ✅ Fluxo de trabalho
+  - 🔲 Boas práticas
 
-#### Autenticação e Segurança
-- 🔲 Implementar proteções adicionais
-  - 🔲 Rate limiting para tentativas de login
-  - 🔲 Bloqueio temporário após 3 tentativas falhas
-  - 🔲 Política de senha forte
-  - 🔲 Autenticação em duas etapas (2FA)
-  
-- 🔲 Melhorias no processo de login
-  - 🔲 Implementar remember me
-  - 🔲 Gerenciamento de sessões ativas
-  - 🔲 Logout em todos dispositivos
-  - 🔲 Histórico de logins
-
-- ⏳ Sistema de recuperação de senha
-  - ✅ Recuperação básica
-  - 🔲 Templates de email
-  - 🔲 Tokens temporários
-  - 🔲 Validação de links expirados
+#### Melhorias Planejadas
+- 🔲 Implementar tema escuro
+- 🔲 Adicionar gráficos interativos no dashboard
+- 🔲 Implementar exportação de relatórios em PDF
+- 🔲 Adicionar filtros avançados nas listagens
+- 🔲 Implementar sistema de notificações em tempo real
+- 🔲 Adicionar suporte a múltiplos idiomas
+- 🔲 Implementar PWA para acesso offline
+- 🔲 Adicionar sistema de backup automático
+- 🔲 Implementar chat de suporte
+- 🔲 Adicionar tutorial interativo para novos usuários
 
 ### Como Contribuir
 
