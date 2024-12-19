@@ -1,4 +1,4 @@
-const axios = require('axios');
+const jwt = require('jsonwebtoken');
 
 const authMiddleware = async (req, res, next) => {
   try {
@@ -8,21 +8,29 @@ const authMiddleware = async (req, res, next) => {
       return res.status(401).json({ error: 'Token não fornecido' });
     }
 
-    try {
-      // Verifica o token com o serviço de autenticação
-      const response = await axios.get(`${process.env.AUTH_SERVICE_URL}/api/auth/me`, {
-        headers: { Authorization: authHeader }
-      });
+    // Verifica se o token está no formato correto
+    const [scheme, token] = authHeader.split(' ');
+    if (!/^Bearer$/i.test(scheme)) {
+      return res.status(401).json({ error: 'Token mal formatado' });
+    }
 
-      // Adiciona o usuário na requisição
-      req.user = response.data.user;
+    try {
+      // Verifica se o token é válido
+      const decoded = jwt.verify(token, process.env.JWT_SECRET);
+      
+      // Adiciona o ID do usuário na requisição
+      req.userId = decoded.id;
+      req.userRole = decoded.role;
       
       return next();
-    } catch (error) {
-      if (error.response) {
-        return res.status(error.response.status).json(error.response.data);
+    } catch (err) {
+      if (err.name === 'TokenExpiredError') {
+        return res.status(401).json({ error: 'Token expirado' });
       }
-      return res.status(500).json({ error: 'Erro ao validar token' });
+      if (err.name === 'JsonWebTokenError') {
+        return res.status(401).json({ error: 'Token inválido' });
+      }
+      return res.status(401).json({ error: 'Erro na validação do token' });
     }
   } catch (error) {
     return res.status(500).json({ error: 'Erro interno do servidor' });
